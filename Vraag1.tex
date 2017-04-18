@@ -1,0 +1,32 @@
+Om de eigenvectoren en eigenwaarden van een Householdermatrix te bekijken is het nodig om te weten hoe deze wordt opgesteld. De transformatiematrix \textbf{Qk} is een combinatie van een (k-1)x(k-1) identiteitsmatrix en de (m-k+1)x(m-k+1) unitaire householdermatrix \textbf{F}. F wordt opgesteld  via:\\
+
+$F = I -2(vv^{*})/(v^{*}v)$\\
+
+In deze vorm is de projectiematrix $P = (vv^{*})/(v^{*}v)$ makkelijk herkenbaar. Het verschil is hier dat er dubbel zo ver geprojecteerd wordt. Het is mogelijk om van deze matrix de eigenwaardenontbinding op te schrijven:\\
+
+\[
+P = Q \Lambda Q^{T} = 
+\begin{bmatrix}
+    \vdots      & \vdots &  & \vdots\\
+    v/\|v)\| & q_{2} & \dots & q_{n}\\
+   \vdots      & \vdots &  & \vdots
+\end{bmatrix}
+\begin{bmatrix}
+    -1\\
+      & 1\\
+      &   &  \ddots\\
+	& & & 1
+\end{bmatrix}
+\begin{bmatrix}
+    \vdots      & \vdots &  & \vdots\\
+    v/\|v)\| & q_{2} & \dots & q_{n}\\
+   \vdots      & \vdots &  & \vdots
+\end{bmatrix}^{T}
+\]\\
+
+De vectoren $q_{2}$,...,$q_{n}$ vormen hier dan een orthonormale basis voor de (n-1) dimensionele deelruimte loodrecht op v. De vectoren q kunnen gevonden worden via Gram-Schmidt. Belangrijk is om nu in te zien dat $QQ^{T} = I$. Daardoor kan de formule voor F geschreven worden als:\\
+
+$F = QQ^{T} - 2Q \Lambda Q^{T} = Q(I - 2\Lambda)Q^{T}$\\
+
+In deze formule is makkelijk te zien dat de eigenwaarden van F voldoen aan $\lambda_{i}(F) = 1-2\lambda_{i}(P)$. De reeks van eigenwaarden voor F is dus (-1, 1, 1, ..., 1). De eigenvectoren van F zijn dezelfde als deze van P en dus voldoen ze ook aan dezelfde eigenschappen. Omdat F reëel en symmetrisch is, voldoet deze ook aan de eigenschap dat al zijn eigenwaarden -1 of 1 zijn.
+
