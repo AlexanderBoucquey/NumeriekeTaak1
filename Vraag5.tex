@@ -1,8 +1,32 @@
+\subsection{Vraag 5a}
 QR en gelijktijdige iteratie berekenen alle eigenwaarden en bijhorende eigenvectoren. Gelijktijdige iteratie bij een vierkante matrix met Q(0) = I is hetzelfde als het QR algoritme zonder shift. Beide algoritme convergeren lineair.\\ [12pt]
 
-Het QR algoritme met (rq) shift gebruikt het principe van inverse iteratie. Dit berekent alle eigenwaarden.De Rayleigh Quotiënt iteratie maakt ook gebruik van inverse iteratie en Rayleigh Quotiënt, om te convergeren naar de hoogste eigenwaarden. Beide laatste convergeren kubisch naar hun eigenwaarden.\\ [12pt]
+Het QR algoritme met (RQ) shift gebruikt het principe van inverse iteratie. Dit berekent alle eigenwaarden.De Rayleigh Quot\"ent iteratie maakt ook gebruik van inverse iteratie en Rayleigh Quoti\"ent, om te convergeren naar de hoogste eigenwaarden. Beide laatste convergeren kubisch naar hun eigenwaarden.\\ [12pt]
 
-Alle algoritmes, behalve de Rayleigh Quotiënt iteratie, berekenen alle eigenwaarden.\\ [12pt]
+Alle algoritmes, behalve de Rayleigh Quoti\"ent iteratie, berekenen alle eigenwaarden.\\ [12pt]
 
-b) Het QR-algoritme past de RQ iteratie toe op alle vectoren tegelijk. Het gelijktijdig toepassen op een hele matrix
-is het gelijkte iteratie algoritme, de RQ iteratie is de andere stap.
+\subsection{Vraag 5b}
+Het QR-algoritme met RQ shift past de Rayleigh Quoti\"ent iteratie toe op alle vectoren tegelijk. Het gelijktijdig toepassen op een hele matrix is het gelijktijdige iteratie algoritme, de Rayleigh Quoti\"ent iteratie is wat er gebeurd op iedere vector.
+
+\begin{center}
+\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_rayleigh}}
+\end{center}
+\caption{Residu Rayleigh.}
+
+\begin{center}
+\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_gelijktijdige_it_randomQ}}
+\end{center}
+\caption{Residu gelijktijdige iteratie.}
+
+\begin{center}
+\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_qr_zonder}}
+\end{center}
+\caption{Residu QR algoritme zonder shift.}
+
+\begin{center}
+\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_qr_shiftrayleigh}}
+\end{center}
+\caption{Residu QR algoritme met Rayhleigh shift.}
+
+
+
