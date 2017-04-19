@@ -1,13 +1,14 @@
-\subsection{Vraag 5a}
+\subsection*{Vraag 5a}
 QR en gelijktijdige iteratie berekenen alle eigenwaarden en bijhorende eigenvectoren. Gelijktijdige iteratie bij een vierkante matrix met Q(0) = I is hetzelfde als het QR algoritme zonder shift. Beide algoritme convergeren lineair.\\ [12pt]
 
 Het QR algoritme met (RQ) shift gebruikt het principe van inverse iteratie. Dit berekent alle eigenwaarden.De Rayleigh Quot\"ent iteratie maakt ook gebruik van inverse iteratie en Rayleigh Quoti\"ent, om te convergeren naar de hoogste eigenwaarden. Beide laatste convergeren kubisch naar hun eigenwaarden.\\ [12pt]
 
 Alle algoritmes, behalve de Rayleigh Quoti\"ent iteratie, berekenen alle eigenwaarden.\\ [12pt]
 
-\subsection{Vraag 5b}
-Het QR-algoritme met RQ shift past de Rayleigh Quoti\"ent iteratie toe op alle vectoren tegelijk. Het gelijktijdig toepassen op een hele matrix is het gelijktijdige iteratie algoritme, de Rayleigh Quoti\"ent iteratie is wat er gebeurd op iedere vector.
+\subsection*{Vraag 5b}
+Het QR-algoritme met RQ shift past de Rayleigh Quoti\"ent iteratie toe op alle vectoren tegelijk. Het gelijktijdig toepassen op een hele matrix is het gelijktijdige iteratie algoritme, de Rayleigh Quoti\"ent iteratie is wat er gebeurd op iedere vector.\\[12pt]
 
+Wanneer naar het residu gekeken wordt zien we dat het Rayleigh Quoti\"ent in een drie stappen naar machine precisie convergeert. De gelijktijdige iteratie en QR zonder shift 35 iteratie stappen over het berekenen van alle eigenwaarden op machine nauwkeurigheid. QR met Rayleih Quoti\"ent shift convergeert even snel als het Rayleigh Quoti\"ent zelf, maar voor alle eigenwaarden.\\[12 pt]
 \begin{center}
 \makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_rayleigh}}
 \end{center}
