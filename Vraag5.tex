@@ -9,25 +9,20 @@ Alle algoritmes, behalve de Rayleigh Quoti\"ent iteratie, berekenen alle eigenwa
 Het QR-algoritme met RQ shift past de Rayleigh Quoti\"ent iteratie toe op alle vectoren tegelijk. Het gelijktijdig toepassen op een hele matrix is het gelijktijdige iteratie algoritme, de Rayleigh Quoti\"ent iteratie is wat er gebeurd op iedere vector.\\[12pt]
 
 Wanneer naar het residu gekeken wordt zien we dat het Rayleigh Quoti\"ent in een drie stappen naar machine precisie convergeert. De gelijktijdige iteratie en QR zonder shift 35 iteratie stappen over het berekenen van alle eigenwaarden op machine nauwkeurigheid. QR met Rayleih Quoti\"ent shift convergeert even snel als het Rayleigh Quoti\"ent zelf, maar voor alle eigenwaarden.\\[12 pt]
-\begin{center}
-\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_rayleigh}}
-\end{center}
-\caption{Residu Rayleigh.}
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[Residu Rayleigh]{\includegraphics[width=0.5\textwidth]{Tekeningen/residu_rayleigh}\label{Residu Rayleigh}}
+  \hfill
+  \subfloat[Residu gelijktijdige iteratie]{\includegraphics[width=0.5\textwidth]{Tekeningen/residu_gelijktijdige_it_randomQ}\label{Residu gelijktijdige iteratie}}
+  \caption{Links residu Rayleih, rechts residu gelijktijdige iteratie.}
+\end{figure}
 
-\begin{center}
-\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_gelijktijdige_it_randomQ}}
-\end{center}
-\caption{Residu gelijktijdige iteratie.}
-
-\begin{center}
-\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_qr_zonder}}
-\end{center}
-\caption{Residu QR algoritme zonder shift.}
-
-\begin{center}
-\makebox[\textwidth]{\includegraphics[width = \paperwidth, height=8cm]{Tekeningen/residu_qr_shiftrayleigh}}
-\end{center}
-\caption{Residu QR algoritme met Rayhleigh shift.}
-
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[Residu QR algoritme zonder shift]{\includegraphics[width=0.5\textwidth]{Tekeningen/residu_qr_zonder}\label{Residu QR algoritme zonder shift}}
+  \hfill
+  \subfloat[Residu QR algoritme met Rayhleigh shift]{\includegraphics[width=0.5\textwidth]{Tekeningen/residu_qr_shiftrayleigh}\label{Residu QR algoritme met Rayhleigh shift}}
+  \caption{Links residu QR algoritme zonder shift, rechts residu QR algoritme met Rayhleigh shift.}
+\end{figure}
 
 
