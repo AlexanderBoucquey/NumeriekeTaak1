@@ -1,0 +1,47 @@
+vraag 9)
+interlacing eigenschap:
+Er geldt regel 30.6, fig 30.1 dus bij de volgende stap ligt er telkens een eigenwaarde links en een rechts van de huidige eigenwaarde.
+A =
+
+     1     1     0     0
+     1     1    -3     0
+     0    -3     1     2
+     0     0     2     0
+
+eig:
+-2.8771; 0; 1.2874; 4.5897
+
+A =
+
+     1     0 
+     0     1
+eig:
+ 1.0000
+There is no root in the interval
+
+A = 
+
+1	-2	0	0	0	0	0	0	0	0
+-2	1	-2	0	0	0	0	0	0	0
+0	-2	1	-2	0	0	0	0	0	0
+0	0	-2	1	-2	0	0	0	0	0
+0	0	0	-2	1	-2	0	0	0	0
+0	0	0	0	-2	1	-2	0	0	0
+0	0	0	0	0	-2	1	-2	0	0
+0	0	0	0	0	0	-2	1	-2	0
+0	0	0	0	0	0	0	-2	1	-2
+0	0	0	0	0	0	0	0	-2	1
+
+on int = (1,1000)
+eig:
+1.5693    2.6617    3.6194    4.3650    4.8380
+
+on int = (-1, 1000)
+eig:
+-0.6617    0.4307    1.5693    2.6617    3.6194    4.3650    4.8380
+
+ont int = (-1000, 1000)
+eig:
+-2.8380   -2.3650   -1.6194   -0.6617    0.4307    1.5693    2.6617    3.6194    4.3650    4.8380
+   
+Matrices waarbij de eigenwaarden te dicht bij elkaar neigen te liggen falen wegens machine nauwkeurigheid.

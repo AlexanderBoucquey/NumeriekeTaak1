@@ -1,0 +1,8 @@
+Conditie getal A voor gegeven alpha:
+1: 9.4108*10^3
+5: 46.6201
+10: 13.3134
+100: 1.5601
+
+c) Kwalitatieve uitleg:
+Plaats eigenwaarden en conditiegetal van A.
