@@ -1,0 +1,78 @@
+Het algoritme om eigenwaarden te vinden via bisectie is opgedeeld in twee delen. Het eerste deel bepaalt in welk interval er bisectie moet toegepast worden. Het tweede interval past dan echt de bisectie to op het interval. Deel één maakt gebruik van de interlacing eigenschap uit opgave 9. De middengevallen zijn het makkelijkst op te stellen. Het interval is dan tussen twee opeenvolgende eigenwaarden van $A^{(k)}$. Bisectie wordt dan toegepast op de karakteristieke veelterm van $A^{(k+1)}$. Aan de randen wordt dan gekeken tussen de dichtsbijzijnde eigenwaarde in het interval en de rand van het interval.\\
+
+Als makkelijk bestudeerbaar geval werd er gekozen voor de matrix uit opgave 9. Dit is een relatief kleine matrix en dus makkelijk om te overzien. Als eerste werd er gekozen voor een interval dat alle eigenwaarden omvat (-3, 5). De methode was dan in staat om alle eigenwaarden te vinden. Vervolgens werd er een kleiner interval gekozen, zodat niet alle eigenwaarden gevonden konden worden. Ook bij deze test slaagde het programma erin om alle eigenwaarden van A binnen het interval te berekenen. Bij een interval zonder eigenwaarden, werden er ook geen teruggegeven.\\
+
+De belangerlijkste eigenschappen die een matrix A moet bezitten om getest te kunnen worden, waren tridiagonaliteit en symmetrie. Dit zorgt voor de interlacing eigenschap. En deze zorgt weer voor een gebrek aan dubbele nulpunten. Een andere matrix waarop getest werd, was:\\
+
+\[
+A = 
+\begin{bmatrix}
+1&	-2&	0	&0	&0	&0&	0	&0&	0&	0\\
+-2	&1&	-2	&0&	0&	0&	0&	0&	0&	0\\
+0	&-2&	1	&-2	&0	&0&	0&	0&	0&	0\\
+0&	0&	-2	&1&	-2	&0&	0	&0	&0&	0\\
+0&	0	&0&	-2	&1&	-2&	0&	0&	0&	0\\
+0	&0&	0	&0	&-2	&1&-2&	0&	0&	0\\
+0	&0&	0&	0&	0&	-2&	1	&-2	&0&	0\\
+0	&0	&0&	0&	0&	0&	-2&	1&	-2&	0\\
+0&	0	&0&	0&	0&	0&	0&	-2&	1	&-2\\
+0&	0	&0&	0	&0	&0	&0	&0	&-2&	1
+\end{bmatrix}
+\]\\
+
+Deze matrix is opnieuw symmetrisch en tridiagonaal, maar heeft niet bepaald interessante eigenwaarden. Hij werd gewoon gebruikt om de correctheid na te gaan. De testen werden wel interessant wanneer er vrij grote matrices werden gebruikt. Een essenti\"ele eigenschap voor de bisectiemethode is de interlacing eigenschap zoals beschreven in opgave 9. Wanneer er bijvoorbeeld een 1000x1000 matrix werd aangemaakt, doken er hier problemen op. De interlacing eigenschap zegt dat eigenwaarden van $A^{(k)}$ nooit gelijk kunnen zijn aan deze van $A^{(k-1)}$. Echter bij het berekenen van grote matrices, werd het verschil in eigenwaarden van deze twee matrices te klein. Daardoor werkte de bisectiemethode niet meer. Het vergroten van een $A^{(998)}$ naar een $A^{(999)}$ zorgde voor een niet waarneembaar verschil op de eerste eigenwaarde.\\
+
+
+
+
+\begin{algorithm}[ht!]
+	\caption{\texttt{Bisectie\_intervalbepaling}}
+	\label{Bisectie_intervalbepaling}
+	\begin{algorithmic}[1]
+		\Procedure{bisection\_eigenvalue}{A, a, b, tol}
+		\For{k van 1 tot aantal rijen A}{}
+			\State Bereken de karakteristieke veelterm van $A^{(k)}$
+			\State Initialiseer nieuwe E
+			\For{j van 1 tot aantal eigenwaarden in $A^{(k-1)}$ + 1}
+			\If{j gelijk aan maximum}
+				\State $\lambda =$ bisection(p(A), a\_new, b, tol)
+				\State Voeg $\lambda$ toe aan E	
+			\Else
+				\State $\lambda =$  bisection(p(A), a\_new, E\_old(1,j), tol)
+				\State a\_new = E\_old(1,j)
+				\State Voeg $\lambda$ toe aan E
+			\EndIf
+			\EndFor
+			\State $E\_old = E$
+		\EndFor
+		\State \Return{E}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[ht!]
+	\caption{\texttt{Bisectie}}
+	\label{Bisectie}
+	\begin{algorithmic}[1]
+		\Procedure{bisection}{p, a, b, tol}
+		\While{abs(a-b) $\leq$ tol}
+			\State Bereken fa =p(a) en fb = p(b)
+			\If{fa*fb $>$ 0}
+				\State In dit geval is er geen nulpunt in het interval.
+				\State \Return{Lege lijst}
+			\Else
+				\State Stel $x = (a+b)/2$
+				\State Bereken fx
+			\If{$fx = 0$ of kleiner dan tol}
+				\State Stel a en b gelijk aan x
+			\ElsIf{fa*fx $<$ 0}
+				\State Stel b gelijk aan x, want nulpunt in linkse interval.
+			\Else
+				\State Stel a gelijk aan x, want nulpunt rechtse interval.
+			\EndIf
+			\EndIf
+		\EndWhile
+		\State \Return{x}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
