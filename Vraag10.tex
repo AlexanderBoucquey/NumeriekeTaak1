@@ -1,8 +1,8 @@
-Het algoritme om eigenwaarden te vinden via bisectie is opgedeeld in twee delen. Het eerste deel bepaalt in welk interval er bisectie moet toegepast worden. Het tweede interval past dan echt de bisectie to op het interval. Deel één maakt gebruik van de interlacing eigenschap uit opgave 9. De middengevallen zijn het makkelijkst op te stellen. Het interval is dan tussen twee opeenvolgende eigenwaarden van $A^{(k)}$. Bisectie wordt dan toegepast op de karakteristieke veelterm van $A^{(k+1)}$. Aan de randen wordt dan gekeken tussen de dichtsbijzijnde eigenwaarde in het interval en de rand van het interval.\\
+Het algoritme om eigenwaarden te vinden via bisectie is opgedeeld in twee delen. Het eerste deel bepaalt in welk interval er bisectie moet toegepast worden. Het tweede interval past dan echt de bisectie to op het interval. Deel één maakt gebruik van de interlacing eigenschap uit opgave 9. De middengevallen zijn het makkelijkst op te stellen. Het interval is dan tussen twee opeenvolgende eigenwaarden van $A^{(k)}$. Bisectie wordt dan toegepast op de karakteristieke veelterm van $A^{(k+1)}$. Aan de randen wordt gekeken tussen de dichtstbijzijnde eigenwaarde in het interval en de rand van het interval.\\[12pt]
 
-Als makkelijk bestudeerbaar geval werd er gekozen voor de matrix uit opgave 9. Dit is een relatief kleine matrix en dus makkelijk om te overzien. Als eerste werd er gekozen voor een interval dat alle eigenwaarden omvat (-3, 5). De methode was dan in staat om alle eigenwaarden te vinden. Vervolgens werd er een kleiner interval gekozen, zodat niet alle eigenwaarden gevonden konden worden. Ook bij deze test slaagde het programma erin om alle eigenwaarden van A binnen het interval te berekenen. Bij een interval zonder eigenwaarden, werden er ook geen teruggegeven.\\
+Als te bestuderen geval werd er gekozen voor de matrix uit opgave 9. Dit is een kleine matrix en dus makkelijk om te overzien. Als eerste werd er gekozen voor een interval dat alle eigenwaarden omvat (-3, 5). De methode was dan in staat om alle eigenwaarden te vinden. Vervolgens werd er een kleiner interval gekozen, zodat niet alle eigenwaarden gevonden konden worden. Ook bij deze test slaagde het programma erin om alle eigenwaarden van A binnen het interval te berekenen. Bij een interval zonder eigenwaarden, werden er ook geen teruggegeven.\\[12pt]
 
-De belangerlijkste eigenschappen die een matrix A moet bezitten om getest te kunnen worden, waren tridiagonaliteit en symmetrie. Dit zorgt voor de interlacing eigenschap. En deze zorgt weer voor een gebrek aan dubbele nulpunten. Een andere matrix waarop getest werd, was:\\
+De belangrijkste eigenschappen die een matrix A moet bezitten om getest te kunnen worden, waren tridiagonaliteit en symmetrie. Dit zorgt voor de interlacing eigenschap. En deze zorgt weer voor een gebrek aan dubbele nulpunten. Een andere matrix waarop getest werd, was:\\[12pt]
 
 \[
 A = 
@@ -18,10 +18,9 @@ A =
 0&	0	&0&	0&	0&	0&	0&	-2&	1	&-2\\
 0&	0	&0&	0	&0	&0	&0	&0	&-2&	1
 \end{bmatrix}
-\]\\
+\]\\[12pt]
 
 Deze matrix is opnieuw symmetrisch en tridiagonaal, maar heeft niet bepaald interessante eigenwaarden. Hij werd gewoon gebruikt om de correctheid na te gaan. De testen werden wel interessant wanneer er vrij grote matrices werden gebruikt. Een essenti\"ele eigenschap voor de bisectiemethode is de interlacing eigenschap zoals beschreven in opgave 9. Wanneer er bijvoorbeeld een 1000x1000 matrix werd aangemaakt, doken er hier problemen op. De interlacing eigenschap zegt dat eigenwaarden van $A^{(k)}$ nooit gelijk kunnen zijn aan deze van $A^{(k-1)}$. Echter bij het berekenen van grote matrices, werd het verschil in eigenwaarden van deze twee matrices te klein. Daardoor werkte de bisectiemethode niet meer. Het vergroten van een $A^{(998)}$ naar een $A^{(999)}$ zorgde voor een niet waarneembaar verschil op de eerste eigenwaarde.\\
-
 
 
 
